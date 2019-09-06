@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{a62bbec7-5a38-4127-bff6-a070a012eb89}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>G1ControlServer</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Raspberry</TargetLinuxPlatform>
+    <LinuxProjectType>{8748239F-558C-44D1-944B-07B09C35B330}</LinuxProjectType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <Link>
+      <LibraryDependencies>wiringPi</LibraryDependencies>
+    </Link>
+    <RemotePostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </RemotePostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
+    <Link>
+      <LibraryDependencies>wiringPi</LibraryDependencies>
+    </Link>
+    <RemotePostBuildEvent>
+      <Command>gpio export 17 out</Command>
+      <Message>export pin 17 using the gpio utility so that we can execute the blink program without sudo</Message>
+    </RemotePostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Commands.cpp" />
+    <ClCompile Include="Drive.cpp" />
+    <ClCompile Include="FDVHVDU\lib\src\Scope_guard.cpp" />
+    <ClCompile Include="FDVHVDU\ThreadPool\src\CThreadPool.cpp" />
+    <ClCompile Include="FDVHVDU\ThreadPool\src\CThreadPoolItem.cpp" />
+    <ClCompile Include="FDVHVDU\ThreadPool\src\IThreadPoolItemBase.cpp" />
+    <ClCompile Include="FDVHVDU\ThreadPool\src\IThreadPoolItemExecutor.cpp" />
+    <ClCompile Include="FrontServo.cpp" />
+    <ClCompile Include="LED.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="UltraSound.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Commands.h" />
+    <ClInclude Include="Drive.h" />
+    <ClInclude Include="FDVHVDU\lib\header\thread\Atomic_stack.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\thread\CAtomic_stack.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\thread\CBasic_ts_container.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\thread\CLock_bounded_queue.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\thread\CLock_forward_list.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\thread\CLock_queue.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\thread\CLock_unordered_map.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\thread\CLock_unordered_set.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\thread\CSemaphore.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\thread\CSpin_mutex.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\thread\CTask.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\thread\CWait_bounded_queue.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\thread\Lock_queue.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\thread\Node.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\thread\tag.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\tool\CAlloc_obj.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\tool\CInsert_iterator.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\tool\Container_adaptor.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\tool\CUnique_obj.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\tool\Parameter.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\tool\Scope_guard.hpp" />
+    <ClInclude Include="FDVHVDU\lib\header\tool\show.hpp" />
+    <ClInclude Include="FDVHVDU\ThreadPool\header\CThreadPool.hpp" />
+    <ClInclude Include="FDVHVDU\ThreadPool\header\CThreadPoolItem.hpp" />
+    <ClInclude Include="FDVHVDU\ThreadPool\header\CThreadPoolItem_Ret.hpp" />
+    <ClInclude Include="FDVHVDU\ThreadPool\header\CThreadPool_Ret.hpp" />
+    <ClInclude Include="FDVHVDU\ThreadPool\header\IThreadPoolItemBase.hpp" />
+    <ClInclude Include="FDVHVDU\ThreadPool\header\IThreadPoolItemExecutor.hpp" />
+    <ClInclude Include="FrontServo.h" />
+    <ClInclude Include="LED.h" />
+    <ClInclude Include="Pins.h" />
+    <ClInclude Include="UltraSound.h" />
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <ClCompile>
+      <CppLanguageStandard>c++17</CppLanguageStandard>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>-lpthread</AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
