@@ -11,12 +11,15 @@ enum TreadStatus
 	TurningLeft,
 	TurningRight,
 	SpinningLeft,
-	SpinningRight
+	SpinningRight,
+	Tracking
 };
 
 constexpr unsigned int MAX_PWM = 255;
 constexpr unsigned int MIN_PWM = 0;
 constexpr unsigned int DEF_SPEED = 125;
+constexpr unsigned int TRACKING_SPEED = 145;
+constexpr unsigned int TRACKING_SPEED_LOW = 110;
 
 class Drive {
 private:
@@ -24,10 +27,14 @@ private:
 	unsigned int CurrentSpeed;
 	TreadStatus Status;
 	unsigned int CheckSpeed(unsigned int);
+	bool Tracking;
 public:
 	Drive();
 	~Drive();
 	TreadStatus GetStatus();
+	void EnableTracking();
+	void DisableTracking();
+	void Track(nThread::CThreadPool&);
 	void Forward(nThread::CThreadPool&, unsigned int = DEF_SPEED);
 	void Reverse(nThread::CThreadPool&, unsigned int = DEF_SPEED);
 	void TurnLeft(nThread::CThreadPool&, unsigned int = DEF_SPEED);

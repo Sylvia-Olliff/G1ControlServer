@@ -15,6 +15,7 @@ D:\WORK\STEM_Project\G1ControlServer\G1ControlServer\FDVHVDU\ThreadPool\src\IThr
 D:\WORK\STEM_Project\G1ControlServer\G1ControlServer\FrontServo.cpp|/home/pi/projects/G1ControlServer/FrontServo.cpp
 D:\WORK\STEM_Project\G1ControlServer\G1ControlServer\LED.cpp|/home/pi/projects/G1ControlServer/LED.cpp
 D:\WORK\STEM_Project\G1ControlServer\G1ControlServer\main.cpp|/home/pi/projects/G1ControlServer/main.cpp
+D:\WORK\STEM_Project\G1ControlServer\G1ControlServer\Server.cpp|/home/pi/projects/G1ControlServer/Server.cpp
 D:\WORK\STEM_Project\G1ControlServer\G1ControlServer\UltraSound.cpp|/home/pi/projects/G1ControlServer/UltraSound.cpp
 D:\WORK\STEM_Project\G1ControlServer\G1ControlServer\Camera.h|/home/pi/projects/G1ControlServer/Camera.h
 D:\WORK\STEM_Project\G1ControlServer\G1ControlServer\Commands.h|/home/pi/projects/G1ControlServer/Commands.h
@@ -56,4 +57,5 @@ D:\WORK\STEM_Project\G1ControlServer\G1ControlServer\FDVHVDU\ThreadPool\header\I
 D:\WORK\STEM_Project\G1ControlServer\G1ControlServer\FrontServo.h|/home/pi/projects/G1ControlServer/FrontServo.h
 D:\WORK\STEM_Project\G1ControlServer\G1ControlServer\LED.h|/home/pi/projects/G1ControlServer/LED.h
 D:\WORK\STEM_Project\G1ControlServer\G1ControlServer\Pins.h|/home/pi/projects/G1ControlServer/Pins.h
+D:\WORK\STEM_Project\G1ControlServer\G1ControlServer\Server.h|/home/pi/projects/G1ControlServer/Server.h
 D:\WORK\STEM_Project\G1ControlServer\G1ControlServer\UltraSound.h|/home/pi/projects/G1ControlServer/UltraSound.h
